@@ -6,11 +6,41 @@ const Header = (props) => {
           </div>
         )
 }
-const Content = (props) => {
+
+const Part1 = () => {
+     return (
+      <div>
+        <p>Fundamentals of React 10</p>
+      </div>
+     )
+      
+}
+
+const Part2 = () => {
+     return (
+      <div>
+        <p>Using props to pass data 7</p>
+      </div>
+     )
+      
+}
+
+const Part3 = () => {
+     return (
+      <div>
+        <p>State of a component 14</p>
+      </div>
+     )
+      
+}
+
+const Content = () => {
         console.log('Code Du Contenue')
         return(
           <div>
-            <p>{props.name} {props.number}</p>
+              <Part1/>
+              <Part2/>
+              <Part3/>
           </div>
         )
 }
@@ -23,25 +53,13 @@ const Total = (props) => {
       )
 }
 
-
-
-
-
-
-
-
-
-
-
 const App = () => {
   console.log('Bonjour ,Valdes Bonne Présentation')
 
    return(
     <div>
       <Header name="Half Stack application development"/>
-      <Content name="Fundamentals of React" number={10}/>
-      <Content name="Using props to pass data" number={7}/>
-      <Content name="State a component" number={14}/>
+      <Content/>
       <Total value={10 + 7 + 14}/>
     </div>
   
