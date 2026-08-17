@@ -1,8 +1,8 @@
-import Header from "./Component/Header"
+import Header from "./Component/Header";
 
-import Content from "./Component/Content"
+import Content from "./Component/Content";
 
-import Total from "./Component/Total"
+import Total from "./Component/Total";
 
 const App = () => {
   console.log("Bonjour ,Valdes Bonne Présentation");
