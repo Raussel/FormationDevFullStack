@@ -1,22 +1,14 @@
-const Part = (props) => {
-  return (
-    <>
-      <p>{props.names} {props.values}</p>
-    </>
-  );
-};
+import Part from "./Part";
 
-const Content = () => {
+const Content = (props) => {
   console.log("Code Du Contenue");
   return (
     <div>
-      <Part names="Fundamentals of React"  values="10"/>
-      <Part names="Using props to pass data" values="7"/>
-      <Part names="State of a component" values="14"/>
-    
+      {props.parts.map((part) => (
+        <Part name={part.name} exercises={part.exercises} />
+      ))}
     </div>
   );
 };
 
-export default Content
-
+export default Content;
