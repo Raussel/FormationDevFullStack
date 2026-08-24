@@ -1,51 +1,34 @@
-// const Hello = ({ name, age }) => {
-//   const bornYear = () => new Date().getFullYear() - age;
-//   return (
-//     <div>
-//       <p>
-//         Hello {name},you are {age} years old
-//       </p>
-//       <p>So you were probably born in {bornYear()}</p>
-//     </div>
-//   );
-// };
+import Header from "./Component/Header";
 
-// const Footer = () => {
-//   return (
-//     <div>
-//       greeting app created by <a href="https://github.com/mluukkai"></a>
-//     </div>
-//   );
-// };
+import Content from "./Component/Content";
 
-// const App = () => {
-//   const name = "Peter";
-//   const age = 10;
-//   const object = {
-//     name: "Arto Hellas",
-//     age: 35,
-//   };
+import Total from "./Component/Total";
 
-//   return (
-//     <div>
-//       <h1>Greetings</h1>
-//       <Hello name="Maya" age={26 + 10} />
-//       <Hello name={name} age={age} />
-//       <Hello name={object.name} age={object.age}/>
-//       <Footer />
-//     </div>
-//   );
-// };
+const App = () => {
+  const course = {
+    name: "Half Stack application development",
+    parts: [
+      { name: "Fundamental of React", exercises: 10 },
+      { name: "Using props to pass data", exercises: 7 },
+      { name: "State of a Component", exercises: 14 },
+    ],
+  };
+  const Sum = (a, b, c) => {
+    return <div>{a + b + c}</div>;
+  };
 
-// // Les Fonctions
+  const totalExercises = Sum(
+    course.parts[0].exercises,
+    course.parts[1].exercises,
+    course.parts[2].exercises,
+  );
 
-// const average = (a, b) => {
-//   console.log(a);
-//   console.log(b);
-//   return (a + b) / 2;
-// };
-
-// const result = average(12.6, 15);
-// console.log(result);
-
-// export default App;
+  return (
+    <div>
+      <Header name={course.name} />
+      <Content parts={course.parts} />
+      <Total value={totalExercises} />
+    </div>
+  );
+};
+export default App;
