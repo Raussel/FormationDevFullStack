@@ -1,4 +1,4 @@
-# Bien valide le cours
+# Bien je valide le cours
 
 # j'espere que tu as bien compris la notion de destructuration, evenements
 
