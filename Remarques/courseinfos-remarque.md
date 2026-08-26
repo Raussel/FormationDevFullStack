@@ -1,0 +1,5 @@
+# Bien valide le cours
+
+# j'espere que tu as bien compris la notion de destructuration, evenements
+
+# Par besoin de mettre ton projet perso dans ce repo
