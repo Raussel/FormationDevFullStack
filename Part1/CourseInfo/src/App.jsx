@@ -1,54 +1,34 @@
-import { useState } from "react";
+import Header from "./Component/Header";
 
-const History = (props) => {
-  if (props.allClicks.length == 0) {
-    return <div>the app is used by pressing the buttons</div>;
-  }
-  return <div>button press history: {props.allClicks.join("")}</div>;
-};
+import Content from "./Component/Content";
 
-const Button = (props) => {
-  console.log('props value is',props) ;
-  const {onClick, text } = props 
-  return (
-    <button onClick={onClick}>
-      {text}
-    </button>
-  )
-}
+import Total from "./Component/Total";
 
 const App = () => {
-  const [left, setLeft] = useState(0);
-  const [right, setRight] = useState(0);
-  const [allClicks, setAll] = useState([]);
-
-  const handleLeftClick = () => {
-    setAll(allClicks.concat("L"));
-    setLeft(left + 1);
+  const course = {
+    name: "Half Stack application development",
+    parts: [
+      { name: "Fundamental of React", exercises: 10 },
+      { name: "Using props to pass data", exercises: 7 },
+      { name: "State of a Component", exercises: 14 },
+    ],
+  };
+  const Sum = (a, b, c) => {
+    return <div>{a + b + c}</div>;
   };
 
-  const handleResetClick = () => {
-    setAll(allClicks.concat("N"));
-    setLeft(left - 1);
-    setRight(right - 1);
-  };
-
-  const handleRightClick = () => {
-    setAll(allClicks.concat("R"));
-    setRight(right + 1);
-  };
+  const totalExercises = Sum(
+    course.parts[0].exercises,
+    course.parts[1].exercises,
+    course.parts[2].exercises,
+  );
 
   return (
     <div>
-      <button onClick={() => console.log('clicked the button')}>button</button>
-      {left}
-      <Button handleClick={handleLeftClick}  text= 'left' />
-      <Button handleClick={handleResetClick}  text= 'Null'/>
-      <Button handleClick={handleRightClick}  text= 'right'/>
-      {right}
-      <History allClicks={allClicks} />
+      <Header name={course.name} />
+      <Content parts={course.parts} />
+      <Total value={totalExercises} />
     </div>
- 
   );
 };
 export default App;
