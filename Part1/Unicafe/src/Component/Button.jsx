@@ -4,6 +4,9 @@ const Button = (props) => {
             {props.text}
         </button>
     )
+
 }
+//Apprend a destructurer ton code
+
 
 export default Button

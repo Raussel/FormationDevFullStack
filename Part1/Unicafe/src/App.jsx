@@ -14,9 +14,11 @@ const App = () => {
 
   const all = good + neutral + bad;
 
-  const average = all === 0 ? 0 : (good - bad) / all;
+  const average = all === 0 ? 0 : (good - bad) / all;// triple egal permet de tester en plus de la valeur le type d'une variable
 
   const positive = all === 0 ? 0 : (good / all) * 100;
+
+  const mauvais = all === 0 ? 0 : (bad / all) * 100;
   return (
     <div>
       <h1>Give FeedBack</h1>
@@ -31,6 +33,7 @@ const App = () => {
         all={all}
         average={average}
         positive={positive}
+        mauvais={mauvais}
       />
     </div>
   );
